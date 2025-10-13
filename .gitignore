@@ -17,16 +17,11 @@ coverage.*
 *.coverprofile
 profile.cov
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
-go.work.sum
-
 # env file
-.env
+ .env
+
+ docker-compose.yml
 
 # Editor/IDE
-# .idea/
-# .vscode/
+ .idea/
+ .vscode/

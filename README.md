@@ -1,2 +1,2 @@
-# Notibot
+# HitPipe'
 A centralized webhook handler

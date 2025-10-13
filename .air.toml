@@ -1,0 +1,18 @@
+# .air.toml (PowerShell-friendly version)
+root = "."
+tmp_dir = "tmp"
+
+[build]
+# Команда для сборки, тут все правильно
+cmd = "go build -o ./tmp/main.exe ./cmd/server/main.go"
+
+# Бинарник, который air будет запускать.
+# Мы явно указываем путь в формате, который поймет PowerShell.
+bin = "./tmp/main.exe"
+
+# Следить за изменениями
+include_ext = ["go", "toml", "yaml"]
+exclude_dir = ["tmp"]
+
+[log]
+color = true

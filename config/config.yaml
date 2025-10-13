@@ -1,0 +1,11 @@
+grpc_server:
+  port: ":50051"
+  timeout: 4s
+
+postgres:
+  user: "postgres"
+  password: "${DB_PASSWORD}"
+  host: "postgres" 
+  port: "5432"
+  db_name: "users_db"
+  ssl_mode: "disable"
