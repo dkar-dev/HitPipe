@@ -2,7 +2,7 @@
 package postgres
 
 import (
-	"github.com/dkar-dev/HitPipe/internal/domain"
+	"github.com/dkar-dev/hitpipe/internal/domain"
 
 	"github.com/jmoiron/sqlx"
 )

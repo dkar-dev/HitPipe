@@ -1,25 +1,26 @@
 package config
 
 type Config struct {
-	App      AppConfig      `yaml:"app"`
-	Postgres PostgresConfig `yaml:"postgres"`
-	Logger   LoggerConfig   `yaml:"logger"`
+	App      AppConfig      `mapstructure:"app"`
+	Postgres PostgresConfig `mapstructure:"postgres"`
+	Logger   LoggerConfig   `mapstructure:"logger"`
 }
 
 type AppConfig struct {
-	Name string `yaml:"name"`
-	Env  string `yaml:"env"`
+	Name string `mapstructure:"name"`
+	Port string `mapstructure:"port"`
+	Env  string `mapstructure:"env"`
 }
 
 type PostgresConfig struct {
-	User     string `yaml:"user"`
-	Password string `yaml:"password"`
-	Host     string `yaml:"host"`
-	Port     string `yaml:"port"`
-	DBName   string `yaml:"db_name"`
-	SSLMode  string `yaml:"ssl_mode"`
+	User     string `mapstructure:"user"`
+	Password string `mapstructure:"password"`
+	Host     string `mapstructure:"host"`
+	Port     string `mapstructure:"port"`
+	DB       string `mapstructure:"db"`
+	SSLMode  string `mapstructure:"ssl_mode"`
 }
 
 type LoggerConfig struct {
-	Level string `yaml:"level"`
+	Level string `mapstructure:"level"`
 }

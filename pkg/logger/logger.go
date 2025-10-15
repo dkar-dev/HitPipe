@@ -8,9 +8,10 @@ import (
 )
 
 const (
-	envLocal = "local"
-	envDev   = "development"
-	envProd  = "production"
+	envLocal   = "local"
+	envDev     = "dev"
+	envStaging = "staging"
+	envProd    = "prod"
 )
 
 func NewLogger(env string, level string) *slog.Logger {
@@ -34,12 +35,12 @@ func NewLogger(env string, level string) *slog.Logger {
 	switch env {
 
 	case envLocal:
-		log = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: logLevel}))
+		log = slog.New(tint.NewHandler(os.Stdout, &tint.Options{Level: logLevel, TimeFormat: time.Kitchen}))
 
 	case envDev:
 		log = slog.New(tint.NewHandler(os.Stdout, &tint.Options{Level: logLevel, TimeFormat: time.Kitchen}))
 
-	case envProd:
+	case envStaging, envProd:
 		log = slog.New(slog.NewJSONHandler(os.Stderr, &slog.HandlerOptions{Level: logLevel}))
 	}
 

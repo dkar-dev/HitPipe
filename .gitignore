@@ -18,10 +18,11 @@ coverage.*
 profile.cov
 
 # env file
- .env
-
- docker-compose.yml
+.env
+.air.toml
+docker-compose.yml
 
 # Editor/IDE
- .idea/
- .vscode/
+.idea/
+.vscode/
+tmp/

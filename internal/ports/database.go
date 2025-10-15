@@ -3,7 +3,7 @@ package ports
 
 import (
 	"context"
-	"github.com/dkar-dev/HitPipe/internal/domain"
+	"github.com/dkar-dev/hitpipe/internal/domain"
 )
 
 type UserRepository interface {

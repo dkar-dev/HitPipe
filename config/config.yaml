@@ -1,14 +1,15 @@
 app:
-  name: "Hitpipe"
-  env: "development"
+  name: HitPipe
+  port: ${APP_PORT:8080}
+  env: ${APP_ENV:local}
 
 postgres:
-  user: "postgres"
-  password: "${DB_PASSWORD}"
-  host: "postgres"
-  port: "5432"
-  db_name: "users_db"
-  ssl_mode: "disable"
+  user: ${POSTGRES_USER}
+  password: ${POSTGRES_PASSWORD}
+  host: ${POSTGRES_HOST:postgres}
+  port: ${POSTGRES_PORT:5432}
+  db: ${POSTGRES_DB:postgres}
+  ssl_mode: disable
 
-  logger:
-    level: debug
+logger:
+  level: ${LOGGER_LEVEL:debug}
