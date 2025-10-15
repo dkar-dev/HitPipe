@@ -1,9 +1,7 @@
 FROM golang:1.25-alpine AS builder
-
 WORKDIR /app
 
 # --- Оптимизация кэширования зависимостей ---
-COPY config/config.yaml config/.env
 COPY go.mod go.sum ./
 
 RUN go mod download
@@ -17,7 +15,8 @@ WORKDIR /app
 
 COPY --from=builder /app/main .
 
+COPY ./config/.env ./config/.env
 COPY ./config/config.yaml ./config/config.yaml
 
-EXPOSE 50051
+EXPOSE 8080
 CMD ["./main"]

@@ -1,15 +1,14 @@
 package config
 
-import "time"
-
 type Config struct {
-	GRPCServer GRPCConfig     `yaml:"grpc_server"`
-	Postgres   PostgresConfig `yaml:"postgres"`
+	App      AppConfig      `yaml:"app"`
+	Postgres PostgresConfig `yaml:"postgres"`
+	Logger   LoggerConfig   `yaml:"logger"`
 }
 
-type GRPCConfig struct {
-	Port    string        `yaml:"port"`
-	Timeout time.Duration `yaml:"timeout"`
+type AppConfig struct {
+	Name string `yaml:"name"`
+	Env  string `yaml:"env"`
 }
 
 type PostgresConfig struct {
@@ -19,4 +18,8 @@ type PostgresConfig struct {
 	Port     string `yaml:"port"`
 	DBName   string `yaml:"db_name"`
 	SSLMode  string `yaml:"ssl_mode"`
+}
+
+type LoggerConfig struct {
+	Level string `yaml:"level"`
 }
